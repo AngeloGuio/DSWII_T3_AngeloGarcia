@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,4 +20,6 @@ public class Autor {
     private String apeautor;
     private Date fechnacautor;
 
+    @OneToMany(mappedBy = "autor")
+    private List<Publicacion> publicaciones;
 }

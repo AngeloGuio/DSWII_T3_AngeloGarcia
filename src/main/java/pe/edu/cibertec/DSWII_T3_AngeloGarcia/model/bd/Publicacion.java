@@ -17,5 +17,8 @@ public class Publicacion {
     private String titulo;
     private String resumen;
     private Date fechpublicacion;
+    @ManyToOne
+    @JoinColumn(name = "idautor")
+    private Autor idautor;
 
 }
