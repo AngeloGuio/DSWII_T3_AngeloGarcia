@@ -16,7 +16,8 @@ import java.util.stream.Collectors;
 
 public class FiltroJWTAutorizacion extends OncePerRequestFilter {
 
-    private final String CLAVE = "@Cibertec2023";
+    private final String CLAVE = "@Cibertec2024";
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -68,6 +69,7 @@ public class FiltroJWTAutorizacion extends OncePerRequestFilter {
         }
         return true;
     }
+
 
 
 }

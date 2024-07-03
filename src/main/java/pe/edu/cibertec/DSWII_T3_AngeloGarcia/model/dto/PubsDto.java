@@ -7,10 +7,10 @@ import pe.edu.cibertec.DSWII_T3_AngeloGarcia.model.bd.Publicacion;
 import java.util.Date;
 
 @Data
-public class pubsDto implements DtoEntity{
-    private Publicacion titulo;
-    private Publicacion resumen;
-    private Publicacion fechpublicacion;
-    private Autor nomautor;
-    private Autor apeautor;
+public class PubsDto implements DtoEntity{
+    private String titulo;
+    private String resumen;
+    private Date fechpublicacion;
+    private AutorDto autor;
+
 }

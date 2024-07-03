@@ -19,6 +19,6 @@ public class Publicacion {
     private Date fechpublicacion;
     @ManyToOne
     @JoinColumn(name = "idautor")
-    private Autor idautor;
+    private Autor autor;
 
 }

@@ -18,6 +18,7 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class DetalleUsuarioService implements UserDetailsService {
+    
     private UsuarioRepository usuarioRepository;
 
     @Override
@@ -48,7 +49,7 @@ public class DetalleUsuarioService implements UserDetailsService {
             Usuario usuario, List<GrantedAuthority> authorityList
     ){
         return new User(
-                usuario.getNombres(),
+                usuario.getNomusuario(),
                 usuario.getPassword(),
                 usuario.getActivo(),
                 true, true, true,

@@ -32,7 +32,7 @@ public class Usuario {
     private Boolean activo;
     @ManyToMany(
             cascade = CascadeType.MERGE,
-            fetch = FetchType.EAGER )
+            fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_rol", joinColumns =
     @JoinColumn(name = "idusuario"),
             inverseJoinColumns = @JoinColumn(name = "idrol"))

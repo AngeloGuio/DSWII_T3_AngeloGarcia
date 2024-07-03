@@ -22,6 +22,7 @@ import pe.edu.cibertec.DSWII_T3_AngeloGarcia.service.DetalleUsuarioService;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
+
     private final DetalleUsuarioService detalleUsuarioService;
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

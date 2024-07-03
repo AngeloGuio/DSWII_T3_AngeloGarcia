@@ -5,32 +5,32 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pe.edu.cibertec.DSWII_T3_AngeloGarcia.model.bd.Usuario;
 import pe.edu.cibertec.DSWII_T3_AngeloGarcia.model.dto.UsuarioSeguridadDto;
 import pe.edu.cibertec.DSWII_T3_AngeloGarcia.service.DetalleUsuarioService;
+
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @AllArgsConstructor
 @RestController
 @RequestMapping(path = "api/v1/auth")
 public class AuthController {
+
     private DetalleUsuarioService detalleUsuarioService;
     private AuthenticationManager authenticationManager;
 
     @GetMapping("/login")
-    @Transactional(readOnly = true)
     public ResponseEntity<UsuarioSeguridadDto> autenticarUsuario(
             @RequestParam("usuario") String usuario,
             @RequestParam("password") String password
@@ -55,9 +55,6 @@ public class AuthController {
             throw  new Exception("Usuario y/u password incorrecto");
         }
     }
-
-
-
 
     private String generarToken(Usuario usuario){
         String clave = "@Cibertec2024";
